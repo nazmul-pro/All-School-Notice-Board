@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="layouts/main">
+
+<head>
+
+<title>Board</title>
+
+<link rel="stylesheet" href="css/carousel.css"
+	th:href="@{/css/carousel.css}" />
+
+<!-- Make sure to close the angle bracket  -->
+</head>
+
+<body>
+	<div layout:fragment="content">
+		<div class="container">
+			<br /><br /><br /><br /><br />
+			
+			<fieldset>
+				<legend>Do you want to create board for '<span th:text="${boardName}">Board Name</span>'?</legend>
+				            
+	            <form class="form-horizontal" role="form" th:action="@{/register}" method="post">
+	
+	                <input type="hidden" id="boardName" name="boardName" th:value="${boardName}"/>
+	
+	                <div class="form-group">
+	                    <label for="password" class="col-sm-2 control-label">Password </label>
+	
+	                    <div class="col-sm-4">
+	                        <input type="password" class="form-control" id="password" name="password" placeholder="Password" />
+	                    </div>
+	                    <p class="text-danger" th:text="${param.error[0]}" th:unless="${param.error == null}">
+        	                Invalid Password
+    	                </p>
+			        </div>
+	
+	                <div class="form-group">
+	                    <div class="col-sm-offset-2 col-sm-10">
+	                        <button type="submit" class="btn btn-primary">Create Board</button>
+	                    </div>
+	                </div>
+	            </form>
+	        </fieldset>			
+		</div>
+	</div>
+</body>
+</html>
