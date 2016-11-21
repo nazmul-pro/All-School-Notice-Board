@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="layouts/main">
+
+<head>
+
+<title>Board</title>
+
+<link rel="stylesheet" href="css/carousel.css"
+	th:href="@{/css/carousel.css}" />
+
+<!-- Make sure to close the angle bracket  -->
+</head>
+
+<body>
+	<div layout:fragment="content">
+		<div class="container">
+			<br /><br /><br />
+			<h1 th:text="${boardName}" >School Board Page</h1>
+			
+			<br />
+			<h3>Content:</h3>
+			<span th:text="${boardContent}">Content Goes Here</span>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,4 +1,4 @@
-package com.nazmul.pro;
+package com.nazmulpro.schoolNoticeBoard;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
